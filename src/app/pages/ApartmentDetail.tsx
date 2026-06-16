@@ -30,20 +30,20 @@ export function ApartmentDetail() {
   if (!apartment) return <Navigate to="/apartments" replace />;
 
   // ✅ FIXED NETLIFY SUBMISSION (important)
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const formData = new FormData(e.currentTarget);
-
+  
+    const form = e.currentTarget;
+  
     await fetch("/", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: new URLSearchParams(formData as any).toString(),
+      body: new URLSearchParams(new FormData(form)).toString(),
     });
-
-    setSubmitted(true);
+  
+    alert("Sent!");
   };
 
   const nextImg = () =>
