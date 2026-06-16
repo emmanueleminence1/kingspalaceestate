@@ -163,80 +163,80 @@ export function ApartmentDetail() {
                     <p className="text-white/60 text-sm">We'll contact you shortly to schedule your inspection.</p>
                   </div>
                 ) : (
-<form
-  name="contact"
-  method="POST"
-  data-netlify="true"
-  data-netlify-honeypot="bot-field"
-  onSubmit={handleSubmit}
-  className="space-y-4"
->
-
-  {/* Netlify required hidden inputs */}
-  <input type="hidden" name="form-name" value="contact" />
-  <input type="hidden" name="bot-field" />
-
-  {[
-    { name: 'name', label: 'Full Name', type: 'text', placeholder: 'John Adeyemi' },
-    { name: 'phone', label: 'Phone Number', type: 'tel', placeholder: '+234 800 000 0000' },
-    { name: 'email', label: 'Email Address', type: 'email', placeholder: 'john@example.com' },
-  ].map((field) => (
-    <div key={field.name}>
-      <label className="block text-white/70 text-xs uppercase tracking-wide mb-1.5">
-        {field.label}
-      </label>
-
-      <input
-        type={field.type}
-        name={field.name}
-        required
-        placeholder={field.placeholder}
-        value={form[field.name as keyof typeof form]}
-        onChange={(e) => setForm({ ...form, [field.name]: e.target.value })}
-        className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 rounded px-4 py-3 text-sm focus:outline-none focus:border-[#D4AF37] transition-colors"
-      />
-    </div>
-  ))}
-
-  <div>
-    <label className="block text-white/70 text-xs uppercase tracking-wide mb-1.5">
-      Message
-    </label>
-
-    <textarea
-      rows={3}
-      name="message"
-      placeholder={`I'm interested in ${apartment.title}...`}
-      value={form.message}
-      onChange={(e) => setForm({ ...form, message: e.target.value })}
-      className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 rounded px-4 py-3 text-sm focus:outline-none focus:border-[#D4AF37] transition-colors resize-none"
-    />
-  </div>
-
-  <button
-    type="submit"
-    className="w-full py-3.5 bg-[#D4AF37] text-[#0F172A] font-bold rounded hover:bg-[#E5C848] transition-all duration-200"
-    style={{ fontFamily: 'Poppins, sans-serif' }}
-  >
-    Request Inspection
-  </button>
-
-</form>
-
-                <div className="mt-5 pt-5 border-t border-white/10 flex items-center gap-3">
-                  <Phone className="w-4 h-4 text-[#D4AF37]" />
+                  <form
+                  name="contact"
+                  method="POST"
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field"
+                  onSubmit={handleSubmit}
+                  className="space-y-4"
+                >
+                
+                  {/* Netlify required hidden inputs */}
+                  <input type="hidden" name="form-name" value="contact" />
+                  <input type="hidden" name="bot-field" />
+                
+                  {[
+                    { name: 'name', label: 'Full Name', type: 'text', placeholder: 'John Adeyemi' },
+                    { name: 'phone', label: 'Phone Number', type: 'tel', placeholder: '+234 800 000 0000' },
+                    { name: 'email', label: 'Email Address', type: 'email', placeholder: 'john@example.com' },
+                  ].map((field) => (
+                    <div key={field.name}>
+                      <label className="block text-white/70 text-xs uppercase tracking-wide mb-1.5">
+                        {field.label}
+                      </label>
+                
+                      <input
+                        type={field.type}
+                        name={field.name}
+                        required
+                        placeholder={field.placeholder}
+                        value={form[field.name as keyof typeof form]}
+                        onChange={(e) => setForm({ ...form, [field.name]: e.target.value })}
+                        className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 rounded px-4 py-3 text-sm focus:outline-none focus:border-[#D4AF37] transition-colors"
+                      />
+                    </div>
+                  ))}
+                
                   <div>
-                    <p className="text-white/60 text-xs">Or call us directly</p>
-                    <a href="tel:+2348001234567" className="text-white text-sm font-medium hover:text-[#D4AF37] transition-colors">
-                      +234 800 123 4567
-                    </a>
+                    <label className="block text-white/70 text-xs uppercase tracking-wide mb-1.5">
+                      Message
+                    </label>
+                
+                    <textarea
+                      rows={3}
+                      name="message"
+                      placeholder={`I'm interested in ${apartment.title}...`}
+                      value={form.message}
+                      onChange={(e) => setForm({ ...form, message: e.target.value })}
+                      className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 rounded px-4 py-3 text-sm focus:outline-none focus:border-[#D4AF37] transition-colors resize-none"
+                    />
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+                
+                  <button
+                    type="submit"
+                    className="w-full py-3.5 bg-[#D4AF37] text-[#0F172A] font-bold rounded hover:bg-[#E5C848] transition-all duration-200"
+                    style={{ fontFamily: 'Poppins, sans-serif' }}
+                  >
+                    Request Inspection
+                  </button>
+                
+                </form
+                
+                                <div className="mt-5 pt-5 border-t border-white/10 flex items-center gap-3">
+                                  <Phone className="w-4 h-4 text-[#D4AF37]" />
+                                  <div>
+                                    <p className="text-white/60 text-xs">Or call us directly</p>
+                                    <a href="tel:+2348001234567" className="text-white text-sm font-medium hover:text-[#D4AF37] transition-colors">
+                                      +234 800 123 4567
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                
+
