@@ -221,8 +221,7 @@ export function ApartmentDetail() {
                     Request Inspection
                   </button>
                 
-                </form
-                
+                  </form>
                                 <div className="mt-5 pt-5 border-t border-white/10 flex items-center gap-3">
                                   <Phone className="w-4 h-4 text-[#D4AF37]" />
                                   <div>
