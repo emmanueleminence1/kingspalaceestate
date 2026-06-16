@@ -188,7 +188,7 @@ export function ApartmentDetail() {
 
       <input
         type={field.type}
-        name={field.name}   // ✅ IMPORTANT FOR NETLIFY
+        name={field.name}
         required
         placeholder={field.placeholder}
         value={form[field.name as keyof typeof form]}
@@ -206,7 +206,6 @@ export function ApartmentDetail() {
   </button>
 
 </form>
-                    {[
                       { name: 'name', label: 'Full Name', type: 'text', placeholder: 'John Adeyemi' },
                       { name: 'phone', label: 'Phone Number', type: 'tel', placeholder: '+234 800 000 0000' },
                       { name: 'email', label: 'Email Address', type: 'email', placeholder: 'john@example.com' },
