@@ -163,7 +163,49 @@ export function ApartmentDetail() {
                     <p className="text-white/60 text-sm">We'll contact you shortly to schedule your inspection.</p>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
+<form
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  data-netlify-honeypot="bot-field"
+  onSubmit={handleSubmit}
+  className="space-y-4"
+>
+
+  {/* Netlify required hidden inputs */}
+  <input type="hidden" name="form-name" value="contact" />
+  <input type="hidden" name="bot-field" />
+
+  {[
+    { name: 'name', label: 'Full Name', type: 'text', placeholder: 'John Adeyemi' },
+    { name: 'phone', label: 'Phone Number', type: 'tel', placeholder: '+234 800 000 0000' },
+    { name: 'email', label: 'Email Address', type: 'email', placeholder: 'john@example.com' },
+  ].map((field) => (
+    <div key={field.name}>
+      <label className="block text-white/70 text-xs uppercase tracking-wide mb-1.5">
+        {field.label}
+      </label>
+
+      <input
+        type={field.type}
+        name={field.name}   // ✅ IMPORTANT FOR NETLIFY
+        required
+        placeholder={field.placeholder}
+        value={form[field.name as keyof typeof form]}
+        onChange={(e) => setForm({ ...form, [field.name]: e.target.value })}
+        className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 rounded px-4 py-3 text-sm focus:outline-none focus:border-[#D4AF37] transition-colors"
+      />
+    </div>
+  ))}
+
+  <button
+    type="submit"
+    className="w-full bg-[#D4AF37] text-black font-medium py-3 rounded hover:opacity-90 transition"
+  >
+    Send Message
+  </button>
+
+</form>
                     {[
                       { name: 'name', label: 'Full Name', type: 'text', placeholder: 'John Adeyemi' },
                       { name: 'phone', label: 'Phone Number', type: 'tel', placeholder: '+234 800 000 0000' },
