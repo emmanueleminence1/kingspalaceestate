@@ -28,8 +28,7 @@ export function ApartmentDetail() {
 
   if (!apartment) return <Navigate to="/apartments" replace />;
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     setSubmitted(true);
   };
 
